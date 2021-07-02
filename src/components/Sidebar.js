@@ -25,6 +25,7 @@ const Sidebar = ({ slug, repo_branches, publishedBranches, toctreeData, toggleLe
         top: 87px !important;
       }
     `;
+  const shouldDisplayVersions = repo_branches?.branches?.length > 1;
 
   return (
     <aside className={`sidebar ${style.sidebar}`} id="sidebar">
@@ -39,9 +40,7 @@ const Sidebar = ({ slug, repo_branches, publishedBranches, toctreeData, toggleLe
                 {formatText(title)}
               </Link>
             </h3>
-            {publishedBranches && (
-              <VersionDropdown slug={slug} publishedBranches={publishedBranches} repo_branches={repo_branches} />
-            )}
+            {shouldDisplayVersions && <VersionDropdown slug={slug} repo_branches={repo_branches} />}
           </div>
           <TableOfContents toctreeData={toctreeData} height={fixedHeight} activeSection={slug} />
         </div>
