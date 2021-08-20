@@ -16,7 +16,7 @@ const Document = ({
     slug,
     page,
     metadata: { parentPaths, publishedBranches, slugToTitle: slugTitleMapping, title, toctree, toctreeOrder },
-    repo_branches,
+    repoBranches,
   },
 }) => {
   const { isTabletOrMobile } = useScreenSize();
@@ -42,7 +42,7 @@ const Document = ({
           <div className={`left-column ${style.leftColumn} ${renderStatus}`} id="left-column">
             <Sidebar
               slug={slug}
-              repo_branches={repo_branches}
+              repoBranches={repoBranches}
               publishedBranches={publishedBranches}
               toctreeData={toctree}
               toggleLeftColumn={toggleLeftColumn}

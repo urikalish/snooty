@@ -7,7 +7,7 @@ import { formatText } from '../utils/format-text';
 import style from '../styles/sidebar.module.css';
 import { theme } from '../theme/docsTheme';
 
-const Sidebar = ({ slug, repo_branches, publishedBranches, toctreeData, toggleLeftColumn }) => {
+const Sidebar = ({ slug, repoBranches, toctreeData, toggleLeftColumn }) => {
   const { title } = toctreeData;
 
   // Calculate height of the fixed header so that the TOC can occupy the rest of the vertical space.
